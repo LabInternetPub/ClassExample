@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.tymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>NoteS</title>
+</head>
+<body>
+
+<img src="/logo-tcm.svg">  <!--is mandatory to go to static that is the root -->
+
+<h1>List of all Notes: <b>div</b></h1>
+
+<div th:each="note : ${noteLabList}">
+    <h2>Title: <span th:text="${note.title}"/></h2>
+    <div th:text="${note.content}" />
+    <div th:text="${#temporals.format(note.dateCreation, 'dd-MM-yyyy HH:mm')}" />
+    <div th:text="${note.dateEdit}" />
+</div>
+
+<h1>List of all Notes: <b>list</b></h1>
+<ul>
+    <li th:each="note: ${noteLabList}">
+        <b>Title: <span th:text="${note.title}"/></b>
+        <div th:text="${note.content}" />
+        <div th:text="${#temporals.format(note.dateCreation, 'dd-MM-yyyy HH:mm')}" />
+        <div th:text="${note.dateEdit}" />
+    </li>
+</ul>
+
+<h1>List of all Notes: <b>table</b></h1>
+<table border="1">
+    <tr>
+        <th>Title</th><th>Content</th><th>Date creation</th><th>Date edit</th>
+    </tr>
+    <tr th:each="note: ${noteLabList}">
+        <td th:text="${note.title}">Title</td>
+        <td th:text="${note.content}" />
+        <td th:text="${#temporals.format(note.dateCreation, 'dd-MM-yyyy HH:mm')}" />
+        <td th:text="${note.dateEdit}" />
+    </tr>
+</table>
+
+
+</body>
+</html>
