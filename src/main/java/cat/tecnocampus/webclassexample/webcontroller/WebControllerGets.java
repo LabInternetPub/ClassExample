@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.security.Principal;
 import java.util.List;
 
 @Controller
@@ -46,6 +47,13 @@ public class WebControllerGets {
 
     @GetMapping("getAllNotes")
     public String getAllNotes(Model model) {
+        model.addAttribute("noteLabList", noteLabDAO.getAllNotes());
+        return "getNoteS";
+    }
+
+    @GetMapping("getNotes/{userId}")
+    public String getNotesUser(Model model, Principal principal) {
+        System.out.println("Principal: " + principal.getName());
         model.addAttribute("noteLabList", noteLabDAO.getAllNotes());
         return "getNoteS";
     }
