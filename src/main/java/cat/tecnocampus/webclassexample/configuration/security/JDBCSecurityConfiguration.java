@@ -23,14 +23,14 @@ public class JDBCSecurityConfiguration extends BaseSecurityConfiguration {
 
     private static final String AUTHORITIES_QUERY = "select username, role from authorities where username = ?";
 
+    public JDBCSecurityConfiguration(DataSource dataSource) {
+        this.dataSource = dataSource;
+    }
+
     @Bean
     @Override
     public AuthenticationManager authenticationManagerBean() throws Exception {
         return super.authenticationManagerBean();
-    }
-
-    public JDBCSecurityConfiguration(DataSource dataSource) {
-        this.dataSource = dataSource;
     }
 
     //Configure authentication manager
