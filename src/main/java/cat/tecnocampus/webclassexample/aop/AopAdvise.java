@@ -8,6 +8,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
+
 @Aspect
 @Component
 public class AopAdvise {
@@ -53,6 +55,23 @@ public class AopAdvise {
             return n;
         } catch (Throwable throwable) {
             return -1;
+        }
+    }
+
+    @Pointcut("execution(* cat.tecnocampus.webclassexample.repositories.NoteLabDAO.saveNoteLabList(..))")
+    public void saveNoteNoArgsPointCut() {
+
+    }
+
+    @Around("saveNoteNoArgsPointCut()")
+    public int[] saveNoteAroundNoArgs(ProceedingJoinPoint pj) {
+        try {
+            logger.info("Abans cridar save note. No args");
+            int[] n = (int[]) pj.proceed();
+            logger.info("Despres cridar save note. No args");
+            return n;
+        } catch (Throwable throwable) {
+            return new int[]{-1};
         }
     }
 }
