@@ -46,7 +46,7 @@ public class WebControllerGets {
         return "getNote";
     }
 
-    //This is used for geting all the notes
+    //This is used for getting all the notes
     @GetMapping("getAllNotes")
     public String getAllNotes(Model model) {
         model.addAttribute("noteLabList", noteLabDAO.getAllNotes());
