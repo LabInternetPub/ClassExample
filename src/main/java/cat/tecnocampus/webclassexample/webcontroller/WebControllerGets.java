@@ -51,6 +51,8 @@ public class WebControllerGets {
         return "getNoteS";
     }
 
+    //This is added to illustrate the capability of limiting the access of a resource to its owner only.
+    //The owner must obviously be a registered user
     @GetMapping("getNotes/{userId}")
     public String getNotesUser(Model model, Principal principal) {
         System.out.println("Principal: " + principal.getName());
