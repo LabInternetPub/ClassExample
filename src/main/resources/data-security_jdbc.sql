@@ -1,8 +1,3 @@
-
-INSERT INTO note_lab (title, content, date_creation, date_edit) VALUES ('spring', 'va super be', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
-INSERT INTO note_lab (title, content, date_creation, date_edit) VALUES ('spring boot', 'va encara millor', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
-INSERT INTO note_lab (title, content, date_creation, date_edit) VALUES ('Laboratori app inernet', 'és la millor assignatura del món mundial', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
-
 INSERT INTO user_lab VALUES ('roure', 'Josep', 'Roure', 'roure@tecnocampus.cat', '{noop}roure', 1);
 INSERT INTO user_lab VALUES ('alvarez', 'Sergi', 'Alvarez', 'alvarez@mail.cat', '{noop}alvarez', 1);
 INSERT INTO user_lab VALUES ('castells', 'Esther', 'Castells', 'castells@mail.cat', '{noop}castells', 1);
