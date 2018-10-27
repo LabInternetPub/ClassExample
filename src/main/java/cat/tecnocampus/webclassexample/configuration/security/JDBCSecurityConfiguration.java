@@ -27,11 +27,6 @@ public class JDBCSecurityConfiguration extends BaseSecurityConfiguration {
         this.dataSource = dataSource;
     }
 
-    @Bean
-    @Override
-    public AuthenticationManager authenticationManagerBean() throws Exception {
-        return super.authenticationManagerBean();
-    }
 
     //Configure authentication manager
     @Override
