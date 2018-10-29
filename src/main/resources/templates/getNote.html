@@ -6,7 +6,7 @@
 </head>
 <body>
 
-<img src="/logo-tcm.svg">  <!-- / is mandatory to go to static that is the root -->
+<img src="/images/logo-tcm.svg">  <!-- / is mandatory to go to static that is the root -->
 <h1>Title: <span th:text="${note.title}"/></h1>
 <div th:text="${note.content}" />
 <div th:text="${#temporals.format(note.dateCreation, 'dd-MM-yyyy HH:mm')}" />

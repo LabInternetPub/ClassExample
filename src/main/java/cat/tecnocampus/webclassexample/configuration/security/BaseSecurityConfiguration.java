@@ -19,7 +19,9 @@ public class BaseSecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .antMatchers("/newNote").hasRole("USER")
                 .antMatchers("/getNotes/{userId}").access("authentication.name == #userId") //cannot use principal.username because when user is not logged in principal does not exist
                 //.antMatchers("/getNotes/{userId}/createNote").access("@webSecurity.checkUserId(authentication,#userId)  and isFullyAuthenticated()")
-
+                .antMatchers("/images/**").permitAll()
+                .antMatchers("/api/getAllNotes/**").authenticated()
+                .antMatchers("/api/**").permitAll()
                 .anyRequest().authenticated()
                 .and()
             .formLogin() //to use forms (web)

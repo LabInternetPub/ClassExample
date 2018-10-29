@@ -41,7 +41,7 @@ public class WebControllerGets {
     //This if for getting a note with its id
     @GetMapping("getNote/{id}")
     public String getNote(Model model, @PathVariable int id) {
-        //System.out.println("Getting note " + id);
+        System.out.println("Getting note " + id);
         model.addAttribute("note", noteLabDAO.getNoteById(id));
 
         return "getNote";
