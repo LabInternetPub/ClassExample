@@ -2,6 +2,8 @@ package cat.tecnocampus.webclassexample.webcontroller;
 
 import cat.tecnocampus.webclassexample.repositories.NoteLabDAO;
 import domain.NoteLab;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -70,4 +72,5 @@ public class WebControllerGets {
     public List<NoteLab> getNoteS() {
         return noteLabDAO.getAllNotes();
     }
+
 }

@@ -14,8 +14,8 @@ import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
 import javax.sql.DataSource;
 
-@Profile("security_jdbc")
-@EnableWebSecurity
+@Profile({"security_data_h2", "oracle"})
+@EnableWebSecurity//(debug = true)
 public class JDBCSecurityConfiguration extends BaseSecurityConfiguration {
     private DataSource dataSource;
 
@@ -27,7 +27,6 @@ public class JDBCSecurityConfiguration extends BaseSecurityConfiguration {
         this.dataSource = dataSource;
     }
 
-
     //Configure authentication manager
     @Override
     public void configure(AuthenticationManagerBuilder auth) throws Exception {
@@ -36,5 +35,4 @@ public class JDBCSecurityConfiguration extends BaseSecurityConfiguration {
                 .usersByUsernameQuery(USERS_QUERY)
                 .authoritiesByUsernameQuery(AUTHORITIES_QUERY);
     }
-
 }

@@ -12,7 +12,7 @@ public class BaseSecurityConfiguration extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
-                .antMatchers("/getAllNotes").authenticated()
+                .antMatchers("/getAllNotes").permitAll()
                 .antMatchers("/getNote/**").fullyAuthenticated()
                 .antMatchers("/index.html").permitAll()
                 .antMatchers("/byebye.html").permitAll()
